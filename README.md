@@ -49,7 +49,7 @@ This action is the primary means to start speech, and the only way you can enque
 ```ts
 @speech(input: string|number|boolean|HTMLElement, opts?: SpeechOptions)
 
-type SpeechOpts = {
+type SpeechOptions = {
   queue?: "append" | "immediate" | "next" | "replace"; // default "append"
   lang?: string;
   voice?: "prefer-lang" | string;
@@ -57,7 +57,7 @@ type SpeechOpts = {
 ```
 The `input` param is mandatory and must be one of type `string`, `number`, `boolean`, `HTMLElement`. The input text length [cannot exceed 32767 characters](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/text#value) (this is a limitation of the Web Speech API).
 
-### Action `@speechCtrl`
+#### Action `@speechCtrl`
 
 This action enables you to control playback, and the primary means to adjust the playback options of the `SpeechSynthesisUtterance`.
 
@@ -69,7 +69,9 @@ When invoked, it will automatically apply the new configuration to the existing 
 type Command = "play" | "pause" | "reset" | "next" | "previous" | "remove" | "configure";
 
 type SpeechCtrlOptions = {
-  index?: number; // Only relevant for the 'play' and 'remove' commands
+  // Only relevant for the `play` and `remove` commands:
+  index?: number;
+  // The following properties are only relevant for the `configure` command:
   rate?: number;
   pitch?: number;
   volume?: number;
@@ -88,7 +90,7 @@ You can hook onto these using the standard `data-on` attribute and, if you wish,
 
 #### Event `datastar-speech-status`
 
-This custom event is dispatched on the `window` once the plugin has initialised and each time the playback state of any queued speech has changed.
+This custom event is dispatched on the `window` once the plugin has initialised and each time the queue, or playback state of any queued speech, has changed.
 
 ##### Properties
 
