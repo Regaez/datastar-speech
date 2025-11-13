@@ -33,7 +33,7 @@ The plugin attempts to smooth over some of the rough edges, simplify its use and
 
 ## Documentation
 
-The section below is a summary of the plugin's API, but it is best to [view the live demo examples and documentation page](https://threadgold.nz/demos/datastar-speech), as it is more comprehensive and the interactive nature of the examples will likely help you to better understand the behaviour of the plugin.
+The section below is a summary of the plugin's API, but **it is highly recommended to [view the live demo examples and documentation page](https://threadgold.nz/demos/datastar-speech)**, as it is more comprehensive and the interactive nature of the examples will likely help you to better understand the behaviour of the plugin.
 
 ### Actions
 
